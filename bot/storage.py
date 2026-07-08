@@ -6,6 +6,7 @@ from pathlib import Path
 DATA_FILE = "/tmp/users.json"
 
 def _load() -> dict:
+    Path("data").mkdir(exist_ok=True)
     if not Path(DATA_FILE).exists():
         return {}
     try:
